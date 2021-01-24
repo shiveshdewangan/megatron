@@ -10,10 +10,12 @@ const delhiWeather = {
   date: d,
 };
 
+const port = process.env.PORT || 8080;
+
 app.get("/weather/api/v1/delhi", (req, res) => {
   return res.status(200).json(delhiWeather);
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log(`Server is running on PORT 3000`);
 });
