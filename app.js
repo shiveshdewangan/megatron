@@ -1,11 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const routes = require('./routes/index');
+const cors = require("cors");
+const routes = require("./routes/index");
 
 // express
 const app = express();
 
 // middlewares
+app.use(cors());
 app.use(bodyParser.json());
 app.use("/api", routes);
 
